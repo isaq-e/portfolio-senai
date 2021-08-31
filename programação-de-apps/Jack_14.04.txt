@@ -1,0 +1,34 @@
+import javax.swing.JOptionPane;
+import java.util.ArrayList;
+import java.util.*;
+
+class Main {
+  int cont = 0;
+  public static void main(String[] args) {
+    String p1 = "Qual é o jogo mais jogado do mundo até 2021?";
+    String r1 = "Minecraft";
+    String p2 = "Quem é o maior Streamer do Brasil";
+    String r2 = "Gaules";
+    String p3 = "Qual é a ultima patente do jogo csgo";
+    String r3 = "Global";
+
+    Main m = new Main();
+    m.pergunta(p1, r1);
+    m.pergunta(p2, r2);
+    m.pergunta(p3, r3);
+    m.exibeResultadoFinal();
+  }
+  public void pergunta(String pergunta, String respostaCorreta){
+    String respostaUsuario = JOptionPane.showInputDialog(null, pergunta);
+    if(respostaCorreta.equals(respostaUsuario)){
+      JOptionPane.showMessageDialog(null, "A resposta está correta! Parabéns.");
+      cont ++;
+    }
+    else{
+      JOptionPane.showMessageDialog(null, "A resposta está errada! Tente novamente.");      
+    }
+  }
+  public void exibeResultadoFinal(){
+    JOptionPane.showMessageDialog(null, "Você acertou "+cont+" questões!");
+  }
+}
